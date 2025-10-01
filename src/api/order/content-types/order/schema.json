@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "order_number": {
+      "type": "uid"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "statuS": {
+      "type": "enumeration",
+      "default": "pending",
+      "enum": [
+        "pending",
+        "confirmed",
+        "shipped",
+        "delivered",
+        "cancelled"
+      ]
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product"
+    },
+    "fullName": {
+      "type": "string",
+      "required": false
+    },
+    "invoice": {
+      "type": "json",
+      "required": false
+    },
+    "total_price": {
+      "type": "decimal"
+    },
+    "country": {
+      "type": "string",
+      "default": "Libya"
+    },
+    "city": {
+      "type": "string",
+      "required": false
+    },
+    "address": {
+      "type": "text",
+      "required": false
+    },
+    "phone": {
+      "type": "text",
+      "required": false
+    },
+    "whatsapp": {
+      "type": "text",
+      "required": false
+    },
+    "order_notes": {
+      "type": "richtext"
+    }
+  }
+}
