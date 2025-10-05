@@ -22,13 +22,7 @@
     "statuS": {
       "type": "enumeration",
       "default": "pending",
-      "enum": [
-        "pending",
-        "confirmed",
-        "shipped",
-        "delivered",
-        "cancelled"
-      ]
+      "enum": ["معلق", "مؤكد", "تم الشحن", "تم التسليم", "ملغى"]
     },
     "products": {
       "type": "relation",
